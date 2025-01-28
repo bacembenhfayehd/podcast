@@ -8,6 +8,10 @@ import { Webhook } from "svix";
 
 import { internal } from "./_generated/api";
 import { httpAction } from "./_generated/server";
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 
 const handleClerkWebhook = httpAction(async (ctx, request) => {
   const event = await validateRequest(request);
@@ -53,6 +57,8 @@ const validateRequest = async (
   req: Request
 ): Promise<WebhookEvent | undefined> => {
   const webhookSecret = process.env.CLERK_WEBHOOK_SECRET!;
+
+
   if (!webhookSecret) {
     throw new Error("CLERK_WEBHOOK_SECRET is not defined");
   }
