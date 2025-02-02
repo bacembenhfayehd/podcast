@@ -70,7 +70,7 @@ const CreatePodcast = () => {
           name="podcastTitle"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-2.5">
-              <FormLabel className="text-16 font-bold text-white-1">Podcast Title</FormLabel>
+              <FormLabel className="text-16 font-bold text-white-1">Title</FormLabel>
               <FormControl>
                 <Input className="input-class focus-visible:ring-orange-1" placeholder="JSM Pro podcast" {...field} />
               </FormControl>
@@ -86,7 +86,7 @@ const CreatePodcast = () => {
   <SelectTrigger className={cn('text-16 w-full border-none bg-black-1 text-gray-1')}>
     <SelectValue placeholder="Select AI Voice" className="placeholder:text-gray-1" />
   </SelectTrigger>
-  <SelectContent className="text-16 font-bold border-none bg-black-1 text-white-1 focus:ring-orange-1">
+  <SelectContent className="text-16 font-bold border-none bg-black-1 text-white-1 focus-visible:ring-orange-1">
     {voiceCategories.map((category) => (
       <SelectItem key={category} value={category} className="capitalize focus:bg-orange-1">
         {category}
